@@ -1,7 +1,7 @@
 {
   description = "A collection of Nix development templates";
 
-  templates = {
+  outputs = {
     python = {
       path = ./python;
       description = "A simple Python development environment";
