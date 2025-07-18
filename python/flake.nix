@@ -15,11 +15,12 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         packageOverrides = pkgs.callPackage ./python-packages.nix {};
-        python = pkgs.python3.override { inherit packageOverrides; };
-        pythonEnv = python.withPackages (p: with p; [
-          numpy
-          matplotlib
-        ]);
+        python = pkgs.python3.override {inherit packageOverrides;};
+        pythonEnv = python.withPackages (p:
+          with p; [
+            numpy
+            matplotlib
+          ]);
       in {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
