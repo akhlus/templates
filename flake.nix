@@ -11,6 +11,10 @@
         path = ./latex;
         description = "A simple LaTeX development environment";
       };
+      go = {
+        path = ./go;
+        description = "Go environment";
+      };
     };
   };
 }
